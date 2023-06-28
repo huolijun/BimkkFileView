@@ -17,7 +17,7 @@
         <xdocreport.version>1.0.6</xdocreport.version>
         <xstream.version>1.4.20</xstream.version>
         <junrar.version>7.5.4</junrar.version>
-        <redisson.version>3.2.0</redisson.version>
+        <redisson.version>3.13.4</redisson.version>
         <sevenzipjbinding.version>16.02-2.01</sevenzipjbinding.version>
         <jchardet.version>1.0</jchardet.version>
         <antlr.version>2.7.7</antlr.version>

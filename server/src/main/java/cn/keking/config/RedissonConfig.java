@@ -30,6 +30,7 @@ public class RedissonConfig {
     private int reconnectionTimeout=3000;
     private int failedAttempts=3;
     private String password = null;
+    private String username = null;
     private int subscriptionsPerConnection=5;
     private String clientName=null;
     private int subscriptionConnectionMinimumIdleSize = 1;
@@ -50,26 +51,27 @@ public class RedissonConfig {
                 .setConnectionMinimumIdleSize(connectionMinimumIdleSize)
                 .setConnectionPoolSize(connectionPoolSize)
                 .setDatabase(database)
-                .setDnsMonitoring(dnsMonitoring)
+                // .setDnsMonitoring(dnsMonitoring)
                 .setDnsMonitoringInterval(dnsMonitoringInterval)
                 .setSubscriptionConnectionMinimumIdleSize(subscriptionConnectionMinimumIdleSize)
                 .setSubscriptionConnectionPoolSize(subscriptionConnectionPoolSize)
                 .setSubscriptionsPerConnection(subscriptionsPerConnection)
                 .setClientName(clientName)
-                .setFailedAttempts(failedAttempts)
+                // .setFailedAttempts(failedAttempts)
                 .setRetryAttempts(retryAttempts)
                 .setRetryInterval(retryInterval)
-                .setReconnectionTimeout(reconnectionTimeout)
+                // .setReconnectionTimeout(reconnectionTimeout)
                 .setTimeout(timeout)
                 .setConnectTimeout(connectTimeout)
                 .setIdleConnectionTimeout(idleConnectionTimeout)
-                .setPingTimeout(pingTimeout)
+                // .setPingTimeout(pingTimeout)
+                .setUsername(username)
                 .setPassword(StringUtils.trimToNull(password));
         Codec codec=(Codec) ClassUtils.forName(getCodec(), ClassUtils.getDefaultClassLoader()).newInstance();
         config.setCodec(codec);
         config.setThreads(thread);
         config.setEventLoopGroup(new NioEventLoopGroup());
-        config.setUseLinuxNativeEpoll(false);
+        // config.setUseLinuxNativeEpoll(false);
         return config;
     }
 
@@ -151,6 +153,14 @@ public class RedissonConfig {
 
     public void setFailedAttempts(int failedAttempts) {
         this.failedAttempts = failedAttempts;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getPassword() {
